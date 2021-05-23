@@ -37,10 +37,10 @@ public class Conta {
 
 	public void saque(double quantia) {
 		//withdraw= saque
-		saldo = saldo - quantia;
+		saldo -= quantia + 5.0; // saldo= saldo1000 - (quantia200+5)
 	}
 	public void deposito( double quantia) {
-		saldo= saldo + quantia;
+		saldo +=  quantia; // saldo= saldo + quantia
 	}
 
 }

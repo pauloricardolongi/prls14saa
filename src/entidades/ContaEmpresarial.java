@@ -1,13 +1,13 @@
 package entidades;
 
-public class ContaNegocio extends Conta {
-	private Double Limite_deEmprestimo;
+public class ContaEmpresarial extends Conta{
+private Double Limite_deEmprestimo;
 	
-	private ContaNegocio() {
+	private ContaEmpresarial() {
 		super();
 	}
 
-	public ContaNegocio(Integer numero, String titular, Double saldo, Double limite_deEmprestimo) {
+	public ContaEmpresarial(Integer numero, String titular, Double saldo, Double limite_deEmprestimo) {
 		super(numero, titular, saldo);
 		Limite_deEmprestimo = limite_deEmprestimo;
 	}
@@ -24,6 +24,11 @@ public class ContaNegocio extends Conta {
 		if(quantia <= Limite_deEmprestimo) {
 		 saldo = saldo + quantia - 10.0;
 		}
+	}
+	@Override
+	public void saque(double quantia) {
+		super.saque(quantia);
+		saldo -= 2.0;  // saldo= saldo - 2
 	}
 
 }
